@@ -1,0 +1,105 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$app-primarypal: (
+    50 : #e8eff3,
+    100 : #c7d8e1,
+    200 : #a1becd,
+    300 : #7ba3b9,
+    400 : #5f90aa,
+    500 : #437c9b,
+    600 : #3d7493,
+    700 : #346989,
+    800 : #2c5f7f,
+    900 : #1e4c6d,
+    A100 : #abdaff,
+    A200 : #78c3ff,
+    A400 : #45adff,
+    A700 : #2ba1ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$app-accentpal: (
+    50 : #fffdf9,
+    100 : #fffbf0,
+    200 : #fff9e6,
+    300 : #fff6db,
+    400 : #fff4d4,
+    500 : #fff2cc,
+    600 : #fff0c7,
+    700 : #ffeec0,
+    800 : #ffecb9,
+    900 : #ffe8ad,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary: mat-palette($app-primarypal, 700, 300, 900);
+$app-accent:  mat-palette($app-accentpal, 500, 400, 700);
+
+// The warn palette is optional (defaults to red).
+$app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@import './app/navigation/navtabs/navtabs.component-theme.scss';
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+//navtabs component scss
+@include navtabs-component-theme($app-theme);
+
+//ALl styles here
+.mat-list-option:hover, 
+.mat-list-option.mat-list-item-focus, 
+.mat-nav-list .mat-list-item:hover, 
+.mat-nav-list .mat-list-item.mat-list-item-focus{
+    background-color: mat-color($app-primary, lighter);
+}

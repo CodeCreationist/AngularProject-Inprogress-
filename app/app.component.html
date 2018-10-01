@@ -1,0 +1,22 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-sidenav-list (closeSideNav)="sidenav.close()">
+        </app-sidenav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-header (SideNavigationToggle)="sidenav.toggle()">
+        </app-header> 
+        <app-navtabs>
+        </app-navtabs>
+        <main>
+            <router-outlet></router-outlet>
+            
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>    
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>

@@ -1,0 +1,29 @@
+<div class="navtabs-container">
+    <nav mat-tab-nav-bar fxFlex fxLayout fxLayoutAlign="center center">
+      <a mat-tab-link routerLink="/signin"
+         routerLinkActive #signin="routerLinkActive"
+         [active]="signin.isActive">
+          Sign In
+      </a>
+      <a mat-tab-link routerLink="/signup"
+         routerLinkActive #signup="routerLinkActive"
+         [active]="signup.isActive">
+          Sign Up
+      </a>
+      <a mat-tab-link routerLink="/"
+         routerLinkActive #home="routerLinkActive"
+         [active]="home.isActive">
+          Home
+      </a>
+      <a mat-tab-link routerLink="/admin"
+         routerLinkActive #admin="routerLinkActive"
+         [active]="admin.isActive">
+          Admin
+      </a>
+      <a mat-tab-link routerLink="/process"
+         routerLinkActive #process="routerLinkActive"
+         [active]="process.isActive">
+          Process
+      </a>
+    </nav>
+</div>
